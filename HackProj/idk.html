@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Percentage of Green</title>
+</head>
+<body>
+    <h1>Percentage of Green in an Image</h1>
+    <form action="/process_image" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Calculate Percentage</button>
+    </form>
+    <div id="result"></div>
+    <img src="{{ url_for('static', filename='green_mask.jpg') }}" alt="Green Mask">
+    <script>
+        const form = document.querySelector('form');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            try {
+                const response = await fetch('/process_image', {
+                    method: 'POST',
+                    body: formData,
+                });
+                const data = await response.json();
+                resultDiv.innerHTML = `Percentage of green: ${data.percentage_green.toFixed(2)}%`;
+            } catch (error) {
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
+

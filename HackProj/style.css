@@ -1,0 +1,166 @@
+*{
+    margin:0;
+    border:0;
+    font-family: "Nunito", "Helvetica", "Arial", "sans-serif";;
+    
+    /* background-color: #08042c; */
+    box-sizing:border-box;
+}
+body{
+    background-image: url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+    background-position: center;
+    
+    max-height: 100vh;
+    overflow: hidden;
+}
+.sub-menu-1{
+    display: none;
+    border: white;
+    /* background-color:  rgba(13, 13, 13, 0.5); */
+}
+.index li:hover .sub-menu-1{
+
+    display: block;
+    position:absolute;
+    background-color: rgba(13, 13, 13, 0.5);
+   
+    border: white;
+}
+
+.navbar{
+    border: 1px solid wheat;
+    width:75%;
+    height:auto;
+    background-color: rgba(13, 13, 13, 0.5);
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin:13px auto;
+    }
+nav{
+    
+    position: relative;
+
+    word-spacing: 17px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.logo{
+    height:50px;
+    cursor: pointer;
+}
+.navbar a{
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color:rgb(222, 215, 215);
+    opacity: 70%;
+    font-weight: 100;
+    margin:10px;
+
+}
+
+.navbar a:hover{
+    color:blue;
+    
+    opacity: 70%;
+    transition:0.5s;
+}
+.index{
+    display: flex;
+}
+
+.showcase{
+    background-color: rgba(13, 13, 13, 0.5);
+    width:800px;
+    border-radius: 40px;
+    height:30   0px;
+    display: flex;
+    align-content:center ;
+    margin: 100px auto;
+    overflow: visible;
+    text-align: center;
+    display: flex   ;
+    justify-content: center;
+    padding: 50px;
+}
+.showcase h1{
+   
+    font-family: "Nunito", "Helvetica", "Arial", "sans-serif";
+    font-weight: 800;
+    font-size:40px;
+    margin-bottom: 20px;
+}
+
+.showcase p{
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin-bottom: 30px;
+    opacity: 70%;
+    font-weight: 100;
+}
+.showcase img{
+
+    box-shadow:5px 10px 18px black;
+    z-index: 1;
+}
+
+
+.sign-up{
+    margin-right:12px;
+    margin-top: 15px;
+    padding:15px 36px;
+    border-radius: 2px;
+    color:rgba(0, 0, 0, 0.75);
+    letter-spacing: 1px;
+    text-align:center;
+    
+    cursor: pointer;
+    background-color: rgb(26, 219, 128);
+}
+
+
+/* Waves */
+.ocean {
+    height: 150px; 
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+  }
+  
+  .wave {
+    background: url("wave.svg");
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    animation: wave 12s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  
+  .wave:nth-of-type(2) {
+    bottom: 0;
+    animation: wave 10s linear reverse infinite;
+    opacity: 0.5;
+  }
+  
+  .wave:nth-of-type(3) {
+    bottom: 0;
+    animation: wave 8s -1s linear infinite;
+    opacity: 0.8;
+    
+  }
+  
+
+  @keyframes wave {
+      0% {transform: translateX(0);}
+      50% {transform: translateX(-25%);}
+      100% {transform: translateX(-50%);}
+  }
+

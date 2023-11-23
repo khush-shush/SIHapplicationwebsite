@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Score Calculator</title>
+    <style>
+        .sub-menu-1{
+    display: none;
+    border: white;
+    /* background-color:  rgba(13, 13, 13, 0.5); */
+}
+.index li:hover .sub-menu-1{
+
+    display: block;
+    position:absolute;
+    background-color: rgba(13, 13, 13, 0.5);
+   
+    border: white;
+}
+
+.navbar{
+    border: 1px solid wheat;
+    width:75%;
+    height:auto;    
+    background-color: rgba(19, 19, 22, 0.5);
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin:13px auto;
+    }   
+nav{
+    
+    position: relative;
+
+    word-spacing: 17px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.logo{
+    height:50px;
+    cursor: pointer;
+}
+.navbar a{
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color:rgb(222, 215, 215);
+    opacity: 70%;
+    font-weight: 100;
+    margin:10px;
+
+}
+
+.navbar a:hover{
+    color:blue;
+    
+    opacity: 70%;
+    transition:0.5s;
+}
+.index{
+    display: flex;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d3f4d3;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #3aa757;
+            color: white;
+            padding: 20px;
+        }
+
+        #inputForm {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #3aa757;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #results {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #3aa757;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+      <nav>
+        <a href="#"><img src="960x0 (1).png" class="logo" width="170px" height="200px" /></a>
+        <div class="index">
+          
+            <li style="list-style-type: none;" ><a href="index.html" style="font-size: 1rem;"><b>Home</b></a></li>
+            <li style="list-style-type: none;"><a href="chatbot.html"  style="font-size: 1rem;"><b>Helpbox</b></a></li>
+            <li style="list-style-type: none;"><a href="photo.html" style="font-size: 1rem;"><b>Photos</b></a></li> 
+            <li style="list-style-type: none;"><a href="address.html" style="font-size: 1rem;"><b>Address/Contact</b></a></li>
+            <li style="list-style-type: none;"><a href="#" style="font-size: 1rem;"><b>Learn</b></a>
+            <div class="sub-menu-1" style="border: 1px solid white;">
+              <ul style=" border: 1px white;">
+                 <li style="list-style-type: none;  "><a href="social.html" style="font-size: 1rem;">About Social</a></li>
+
+                 <li style="list-style-type: none; "><a href="governance.html" style="font-size: 1rem;">About Governance</a></li>
+              </ul>
+
+            </div></li>
+          
+
+        </div>
+      </nav>
+    </div>
+    <h1>Environmental Score Calculator</h1>
+    <form id="inputForm">
+        <!-- Input fields for various metrics -->
+                <!-- Input fields for various metrics -->
+                <label for="renew_nrg">Renewable Energy Capacity :</label>
+                <input type="number" id="renew_nrg" required><br><br>
+        
+                <label for="non_renew_nrg">Non-Renewable Energy Emissions :</label>
+                <input type="number" id="non_renew_nrg" required><br><br>
+        
+                <label for="total_nrg">Total Energy :</label>
+                <input type="number" id="total_nrg" required><br><br>
+        
+                <label for="esti_con">Estimated Consumption :</label>
+                <input type="number" id="esti_con" required><br><br>
+        
+                <label for="esti_pro">Estimated Production :</label>
+                <input type="number" id="esti_pro" required><br><br>
+        
+                <label for="water_recyc">Water Recycling :</label>
+                <input type="number" id="water_recyc" required><br><br>
+        
+                <label for="water_con">Water Consumption :</label>
+                <input type="number" id="water_con" required><br><br>
+        
+                <label for="waste_recyc">Waste Recycling :</label>
+                <input type="number" id="waste_recyc" required><br><br>
+        
+                <label for="waste_pro">Waste Production :</label>
+                <input type="number" id="waste_pro" required><br><br>
+        
+                <label for="species">Species per Sq Foot :</label>
+                <input type="number" id="species" required><br><br>
+        
+                <label for="area">Area of Campus:</label>
+                <input type="number" id="area" required><br><br>
+        
+                <label for="trees">Trees per Sq foot :</label>
+                <input type="number" id="trees" required><br><br>
+        
+                <label for="green_area">Percentage of Forrest </label>
+                <input type="number" id="green_area" required><br><br>
+        
+                <label for="aqi">Air Quality Index :</label>
+                <input type="number" id="aqi" required><br><br>
+        
+                <label for="t_pass">Total Number of Passenger Transportation :</label>
+                <input type="number" id="t_pass" required><br><br>
+        
+                <label for="fuel">Overall Fuel Consumption :</label>
+                <input type="number" id="fuel" required><br><br>
+        
+                <label for="t_ele">Element Transportation :</label>
+                <input type="number" id="t_ele" required><br><br>
+        
+                <label for="pol_inci">Pollution Incidents :</label>
+                <input type="number" id="pol_inci" required><br><br>
+        
+                <label for="mat_used">Total Material Used :</label>
+                <input type="number" id="mat_used" required><br><br>
+        
+                <label for="mat_sup">Total Material Supplied :</label>
+                <input type="number" id="mat_sup" required><br><br>
+        
+                <!-- Add input fields for other metrics here -->
+        
+                
+        <input type="submit" value="Calculate Score">
+    </form>
+
+    <!-- Results section to display scores -->
+    <div id="results">
+        <h2>Environmental Scores</h2>
+        <p id="energyScore"></p>
+        <p id="carbonScore"></p>
+        <p id="waterUsageScore"></p>
+        <p id="wasteManagementScore"></p>
+        <p id="biodiversityScore"></p>
+        <p id="airQualityScore"></p>
+        <p id="landUseScore"></p>
+        <p id="transportationScore"></p>
+        <p id="supplyChainScore"></p>
+        <p id="pollutionScore"></p>
+        <p id="resourceEfficiencyScore"></p>
+        <p id="renewableEnergyScore"></p>
+        <p id="overallScore"></p>
+    </div>
+
+    <script>
+    // Function to calculate Energy Consumption score
+    function calculateEnergyConsumption(renew_nrg, non_renew_nrg, total_nrg) {
+            if (renew_nrg - non_renew_nrg >= 0) {
+                return 100;
+            } else {
+                return 100 - (((renew_nrg - non_renew_nrg) / total_nrg) * 100);
+            }
+        }
+
+        // Function to calculate Carbon Emission score
+        function calculateCarbonEmission(esti_con, esti_pro) {
+            if (esti_pro - esti_con <= 0) {
+                return 100;
+            } else {
+                return (100 - ((esti_pro - esti_con) / esti_pro) * 100);
+            }
+        }
+
+        // Function to calculate Water Usage score
+        function calculateWaterUsage(water_recyc, water_con) {
+            if (water_recyc - water_con >= 0) {
+                return 100;
+            } else {
+                return 100 - ((water_recyc - water_con) / water_con) * 100;
+            }
+        }
+
+        // Function to calculate Waste Management score
+        function calculateWasteManagement(waste_recyc, waste_pro) {
+            if (waste_recyc - waste_pro >= 0) {
+                return 100;
+            } else {
+                return 100 - ((waste_recyc - waste_pro) / waste_pro) * 100;
+            }
+        }
+
+        // Function to calculate Biodiversity Metrics score
+        function calculateBiodiversityMetrics(species, area, trees, green_area) {
+            const speciesPerArea = species / area;
+            const treesPerArea = trees / area;
+
+            if (speciesPerArea >= 10 && treesPerArea >= 10) {
+                return 100;
+            } else if (speciesPerArea == 9 && treesPerArea == 9) {
+                return 90;
+            } else if (speciesPerArea == 8 && treesPerArea == 8) {
+                return 80;
+            } else if (speciesPerArea == 7 && treesPerArea == 7) {
+                return 70;
+            } else if (speciesPerArea == 6 && treesPerArea == 6) {
+                return 60;
+            } else if (speciesPerArea == 5 && treesPerArea == 5) {
+                return 50;
+            } else if (speciesPerArea == 4 && treesPerArea == 4) {
+                return 40;
+            } else if (speciesPerArea == 3 && treesPerArea == 3) {
+                return 30;
+            } else if (speciesPerArea == 2 && treesPerArea == 2) {
+                return 20;
+            } else if (speciesPerArea == 1 && treesPerArea == 1) {
+                return 10;
+            } else {
+                return 0;
+            }
+        }
+
+        // Function to calculate Air Quality score
+        function calculateAirQuality(aqi) {
+            if(aqi <=50 )
+            {
+                return 100;
+            }
+            else if(aqi <=100)
+            {
+                return 80;
+            }
+            else if(aqi <=150)
+            {
+                return 60;
+            }
+            else if(aqi <= 200)
+            {
+                return 40;
+            }
+            else if(aqi <= 250)
+            {
+                return 20;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        // Function to calculate Land Use score
+        function calculateLandUse(green_area) {
+            if(green_area >= 90)
+            {
+                return 100;
+            }
+            else if(green_area >=80)
+            {
+                return 90;
+            }
+            else if(green_area >= 70)
+            {
+                return 80;
+            }
+            else if(green_area >=60)
+            {
+                return 70;
+            }
+            else if(green_area >=50)
+            {
+                return 60;
+            }
+            else if(green_area >=40)
+            {
+                return 50;
+            }
+            else if(green_area >= 30)
+            {
+                return 40;
+            }
+            else if(green_area >=20)
+            {
+                return 30;
+            }
+            else if(green_area >=10)
+            {
+                return 20;
+            }
+            else
+            {
+                return 10;
+            }
+        }
+
+        // Function to calculate Transportation Metrics score
+        function calculateTransportationMetrics(t_pass, fuel) {
+            if (t_pass / fuel >= 1) {
+                return 100;
+            } else {
+                return 100 - (t_pass / fuel) * 100;
+            }
+        }
+
+        // Function to calculate Supply Chain score
+        function calculateSupplyChain(t_ele, fuel) {
+            if (t_ele / fuel >= 0) {
+                return 100;
+            } else {
+                return 100 - ((t_ele / fuel) * 100);
+            }
+        }
+
+        // Function to calculate Pollution Metrics score
+        function calculatePollutionMetrics(pol_inci) {
+            if (pol_inci >= 12) {
+                return 0;
+            } else if (pol_inci == 11) {
+                return 10;
+            } else if (pol_inci == 10) {
+                return 20;
+            } else if (pol_inci == 9) {
+                return 30;
+            } else if (pol_inci == 8) {
+                return 40;
+            } else if (pol_inci == 7) {
+                return 50;
+            } else if (pol_inci == 6) {
+                return 60;
+            } else if (pol_inci == 5) {
+                return 80;
+            } else if (pol_inci == 4) {
+                return 90;
+            } else if (pol_inci <= 3) {
+                return 100;
+            }
+        }
+
+        // Function to calculate Resource Efficiency score
+        function calculateResourceEfficiency(mat_used, mat_sup) {
+            if (mat_sup - mat_used >= 0) {
+                return 100;
+            } else {
+                return 100 - ((mat_sup - mat_used) / mat_used) * 100;
+            }
+        }
+
+        // Function to calculate Renewable Energy score
+        function calculateRenewableEnergy(renew_nrg, total_nrg) {
+            if (renew_nrg / total_nrg >= 0) {
+                return 100;
+            } else {
+                return 100 - (renew_nrg / total_nrg) * 100;
+            }
+        }
+
+        // Function to calculate the overall score
+        function calculateOverallScore(
+            energyConsumption,
+            carbonEmission,
+            waterUsage,
+            wasteManagement,
+            biodiversityMetrics,
+            airQuality,
+            landUse,
+            transportationMetrics,
+            supplyChain,
+            pollutionMetrics,
+            resourceEfficiency,
+            renewableEnergy
+        ) {
+            return (
+                energyConsumption +
+                carbonEmission +
+                waterUsage +
+                wasteManagement +
+                biodiversityMetrics +
+                airQuality +
+                landUse +
+                transportationMetrics +
+                supplyChain +
+                pollutionMetrics +
+                resourceEfficiency +
+                renewableEnergy
+            ) / 12;
+        }
+
+        // Function to handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Get input values
+            const renew_nrg = parseFloat(document.getElementById('renew_nrg').value);
+            const non_renew_nrg = parseFloat(document.getElementById('non_renew_nrg').value);
+            const total_nrg = parseFloat(document.getElementById('total_nrg').value);
+            const esti_con = parseFloat(document.getElementById('esti_con').value);
+            const esti_pro = parseFloat(document.getElementById('esti_pro').value);
+            const water_recyc = parseFloat(document.getElementById('water_recyc').value);
+            const water_con = parseFloat(document.getElementById('water_con').value);
+            const waste_recyc = parseFloat(document.getElementById('waste_recyc').value);
+            const waste_pro = parseFloat(document.getElementById('waste_pro').value);
+            const species = parseFloat(document.getElementById('species').value);
+            const area = parseFloat(document.getElementById('area').value);
+            const trees = parseFloat(document.getElementById('trees').value);
+            const green_area = parseFloat(document.getElementById('green_area').value);
+            const aqi = parseFloat(document.getElementById('aqi').value);
+            const t_pass = parseFloat(document.getElementById('t_pass').value);
+            const fuel = parseFloat(document.getElementById('fuel').value);
+            const t_ele = parseFloat(document.getElementById('t_ele').value);
+            const pol_inci = parseFloat(document.getElementById('pol_inci').value);
+            const mat_used = parseFloat(document.getElementById('mat_used').value);
+            const mat_sup = parseFloat(document.getElementById('mat_sup').value);
+
+            // Calculate scores using the provided functions
+            const energyConsumption = calculateEnergyConsumption(renew_nrg, non_renew_nrg, total_nrg);
+            const carbonEmission = calculateCarbonEmission(esti_con, esti_pro);
+            const waterUsage = calculateWaterUsage(water_recyc, water_con);
+            const wasteManagement = calculateWasteManagement(waste_recyc, waste_pro);
+            const biodiversityMetrics = calculateBiodiversityMetrics(species, area, trees, green_area);
+            const airQuality = calculateAirQuality(aqi);
+            const landUse = calculateLandUse(green_area);
+            const transportationMetrics = calculateTransportationMetrics(t_pass, fuel);
+            const supplyChain = calculateSupplyChain(t_ele, fuel);
+            const pollutionMetrics = calculatePollutionMetrics(pol_inci);
+            const resourceEfficiency = calculateResourceEfficiency(mat_used, mat_sup);
+            const renewableEnergy = calculateRenewableEnergy(renew_nrg, total_nrg);
+
+            // Calculate the overall score
+            const overallScore = calculateOverallScore(
+                energyConsumption,
+                carbonEmission,
+                waterUsage,
+                wasteManagement,
+                biodiversityMetrics,
+                airQuality,
+                landUse,
+                transportationMetrics,
+                supplyChain,
+                pollutionMetrics,
+                resourceEfficiency,
+                renewableEnergy
+            );
+
+            // Display the results
+            document.getElementById('energyScore').textContent = `Energy Consumption Score: ${energyConsumption}`;
+            document.getElementById('carbonScore').textContent = `Carbon Emission Score: ${carbonEmission}`;
+            document.getElementById('waterUsageScore').textContent = `Water Usage Score: ${waterUsage}`;
+            document.getElementById('wasteManagementScore').textContent = `Waste Management Score: ${wasteManagement}`;
+            document.getElementById('biodiversityScore').textContent = `Biodiversity Metrics Score: ${biodiversityMetrics}`;
+            document.getElementById('airQualityScore').textContent = `Air Quality Score: ${airQuality}`;
+            document.getElementById('landUseScore').textContent = `Land Use Score: ${landUse}`;
+            document.getElementById('transportationScore').textContent = `Transportation Metrics Score: ${transportationMetrics}`;
+            document.getElementById('supplyChainScore').textContent = `Supply Chain Score: ${supplyChain}`;
+            document.getElementById('pollutionScore').textContent = `Pollution Metrics Score: ${pollutionMetrics}`;
+            document.getElementById('resourceEfficiencyScore').textContent = `Resource Efficiency Score: ${resourceEfficiency}`;
+            document.getElementById('renewableEnergyScore').textContent = `Renewable Energy Score: ${renewableEnergy}`;
+            document.getElementById('overallScore').textContent = `Overall Score: ${overallScore}`;
+        }
+
+        // Add a submit event listener to the form
+        const form = document.getElementById('inputForm');
+        form.addEventListener('submit', handleSubmit);
+
+        const arr1 = [energyConsumption,carbonEmission,waterUsage,wasteManagement,biodiversityMetrics,airQuality];
+        const arr2 = [landUse,transportationMetrics,supplyChain,pollutionMetrics,resourceEfficiency,renewableEnergy];
+    </script>
+    
+</body>
+</html>

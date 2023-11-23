@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url(https://img.freepik.com/free-vector/gradient-cryptocurrency-concept_23-2149215736.jpg?w=996&t=st=1695403770~exp=1695404370~hmac=a2919dd4067a6675090fe586cb0caecb03edf592c81086cc7f933bc8c432912d);
+
+}
+#pikachu{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    
+   
+
+}
+.card{
+    margin-top: 100px;
+    border-radius: 100px;
+    background: rgba(255, 255,255, 0.5);
+    border: 1px solid rgba(255, 0,0, .5);
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+}
+.ds{
+    margin-top:50px ;
+    background-color: #7FFFD4;
+    border: 2px solid red;
+    height: auto;
+    width: 80%;
+    margin-bottom: 30px;
+}
+.sub-menu-1{
+    display: none;
+    border: white;
+    /* background-color:  rgba(13, 13, 13, 0.5); */
+}
+.index li:hover .sub-menu-1{
+
+    display: block;
+    position:absolute;
+    background-color: rgba(13, 13, 13, 0.5);
+   
+    border: white;
+}
+
+.navbar{
+    border: 1px solid wheat;
+    width:75%;
+    height:auto;    
+    background-color: rgba(19, 19, 22, 0.5);
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin:13px auto;
+    }   
+nav{
+    
+    position: relative;
+
+    word-spacing: 17px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.logo{
+    height:50px;
+    cursor: pointer;
+}
+.navbar a{
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color:rgb(222, 215, 215);
+    opacity: 70%;
+    font-weight: 100;
+    margin:10px;
+
+}
+
+.navbar a:hover{
+    color:blue;
+    
+    opacity: 70%;
+    transition:0.5s;
+}
+.index{
+    display: flex;
+    justify-content: left ;
+}
